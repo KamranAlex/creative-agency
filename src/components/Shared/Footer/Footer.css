@@ -7,7 +7,16 @@
   height: auto;
   padding: 10px auto;
 }
-
+.footer-text h1 {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  font-weight: 700;
+}
+.footer-text p {
+  margin-top: 15px;
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+}
 .footer-btn {
   background-color: #111430;
   color: white;
