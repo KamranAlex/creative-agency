@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.header-main {
+  height: 500px;
+}
+.header-slogan {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 800;
+}
+.header-text {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 500;
+}
+.hire-btn {
+  background-color: #111430;
+  color: white;
+  padding: 8px 25px;
+  margin: auto 0;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.2s;
+}
+.hire-btn:hover {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  transform: scale(1.1);
+}

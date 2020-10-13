@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.navbar-nav {
+  margin-left: auto;
+}
+.navbar-brand img {
+  height: 48px;
+}
+.nav-link {
+  margin-right: 20px !important;
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+}
+.login-btn {
+  background-color: #111430;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}

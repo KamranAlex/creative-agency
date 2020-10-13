@@ -1,0 +1,8 @@
+.brands-container {
+  height: 90px;
+  margin: 120px auto 80px auto;
+}
+.brands-logo img {
+  height: 50px;
+  margin: 10px 35px;
+}

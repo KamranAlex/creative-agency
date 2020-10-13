@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.service-card {
+  padding: 20px 20px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+.service-card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.service-awesome {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 700;
+}
+.service-awesome span {
+  color: #7ab259 !important;
+}
+.service-card img {
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 5px auto;
+  transition: 0.7s ease-in-out;
+}
+.service-card img:hover {
+  transform: rotate(360deg);
+}
+.service-title {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.service-text {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-size: 15px;
+}
+@media only screen and (max-width: 600px) {
+  .service-awesome {
+    padding-top: 120px;
+  }
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.ourWorks-section {
+  height: 650px;
+  background: #111430;
+  margin-top: 80px;
+}
+.our-works {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+.our-works span {
+  color: #7ab259 !important;
+}
