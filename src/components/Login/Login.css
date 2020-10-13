@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.login-container {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  margin: auto auto 80px auto;
+  box-shadow: 0 0 10px gray;
+}
+.logoIMG {
+  height: 60px;
+  margin: 20px auto;
+}
+.login-text {
+  padding-top: 80px;
+}
+.login-text h1 {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  font-weight: 800;
+}
+.social-icon {
+  padding: 5px 20px;
+}
+.social-icon img {
+  height: 30px;
+}
+.social-text {
+  padding: 8px 20px;
+}
+.social-text p {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.google-login {
+  border: 1px solid gray;
+  border-radius: 35px;
+  margin: 20px auto;
+  padding: 10px 10px 10px 10px;
+}
+.google-login:hover {
+  outline: none;
+  box-shadow: 0 0 3pt 2pt #dc3545;
+}
+
+.google-login:focus {
+  outline: none;
+}
