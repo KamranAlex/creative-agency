@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 .ourWorks-section {
-  height: 650px;
+  height: 600px;
   background: #111430;
   margin-top: 80px;
 }
@@ -11,4 +11,8 @@
 }
 .our-works span {
   color: #7ab259 !important;
+}
+.slider-container img {
+  width: auto;
+  margin: 0 auto;
 }

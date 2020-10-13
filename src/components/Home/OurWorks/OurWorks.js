@@ -13,33 +13,37 @@ const OurWorks = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     autoplay: true,
     autoplaySpeed: 2000,
+    cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
+    focusOnSelect: true,
+    centerMode: true,
+    centerPadding: "20%",
   };
   return (
     <section className='ourWorks-section pt-5'>
-      <h3 className='text-center our-works'>
+      <h3 className='text-center our-works mb-5'>
         Here are some of <span>Our Works</span>
       </h3>
-      <div className='container text-center'>
-        <Slider {...settings}>
+      <div className='container text-center slider-container'>
+        <Slider {...settings} id='slider'>
           <div>
-            <img style={{ height: "520px" }} src={carousel1} alt='' />
+            <img style={{ height: "410px" }} src={carousel1} alt='' />
           </div>
           <div>
-            <img style={{ height: "520px" }} src={carousel2} alt='' />
+            <img style={{ height: "410px" }} src={carousel2} alt='' />
           </div>
           <div>
-            <img style={{ height: "520px" }} src={carousel3} alt='' />
+            <img style={{ height: "410px" }} src={carousel3} alt='' />
           </div>
           <div>
-            <img style={{ height: "520px" }} src={carousel4} alt='' />
+            <img style={{ height: "410px" }} src={carousel4} alt='' />
           </div>
           <div>
-            <img style={{ height: "520px" }} src={carousel5} alt='' />
+            <img style={{ height: "410px" }} src={carousel5} alt='' />
           </div>
         </Slider>
       </div>

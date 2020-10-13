@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.feedback-section {
+  height: auto;
+  margin: 40px auto;
+}
+.feedback-head {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 700;
+  margin: 15px 0;
+}
+.feedback-head span {
+  color: #7ab259 !important;
+}
+.card-row {
+  display: flex;
+  justify-content: center;
+}
+.feedback-card {
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 10px 30px;
+}
+.client-info img {
+  height: 60px;
+}
+.client-text {
+  margin-left: 15px;
+  padding-top: 10px;
+}
+.client-text h6 {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-weight: 800;
+}
+.client-text p {
+  font-family: "Poppins", sans-serif;
+  color: #111430 !important;
+  font-size: 14px;
+  font-weight: 500;
+}
