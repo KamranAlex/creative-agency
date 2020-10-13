@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.footer-section {
+  height: auto;
+  background: #fbd062;
+}
+.footer-main {
+  height: auto;
+  padding: 10px auto;
+}
+
+.footer-btn {
+  background-color: #111430;
+  color: white;
+  padding: 8px 25px;
+  margin: auto 0;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}

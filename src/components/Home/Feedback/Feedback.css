@@ -31,11 +31,16 @@
 .client-text h6 {
   font-family: "Poppins", sans-serif;
   color: #111430 !important;
+  font-size: 18px;
   font-weight: 800;
 }
 .client-text p {
   font-family: "Poppins", sans-serif;
   color: #111430 !important;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
+}
+.feedback-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
 }
