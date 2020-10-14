@@ -18,6 +18,16 @@ form label {
   color: #111430;
   font-weight: 600;
 }
+form input[type="text"] {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  font-weight: 500;
+}
+form input[type="email"] {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  font-weight: 500;
+}
 .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
