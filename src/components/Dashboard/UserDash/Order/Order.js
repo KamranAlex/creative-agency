@@ -1,10 +1,22 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Order.css";
 
 const Order = () => {
+  const { id } = useParams();
+  const [userOrder, setUserOrder] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/serviceOrder/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUserOrder(data);
+        console.log(data);
+      });
+  }, []);
+
   return (
     <div className='row'>
       <Sidebar></Sidebar>
@@ -28,13 +40,17 @@ const Order = () => {
                 placeholder='Your Email address'
               />
             </div>
-            <div className='form-group'>
-              <input
-                type='text'
-                className='form-control'
-                placeholder='Project Name'
-              />
-            </div>
+            {userOrder.map((order) => {
+              return (
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    className='form-control'
+                    value={order.title}
+                  />
+                </div>
+              );
+            })}
             <div className='form-group'>
               <textarea
                 name=''

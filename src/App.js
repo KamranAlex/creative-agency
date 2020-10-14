@@ -17,7 +17,7 @@ function App() {
         <Route path='/login'>
           <Login></Login>
         </Route>
-        <Route path='/dashboard/order'>
+        <Route path='/dashboard/order/:id'>
           <Order></Order>
         </Route>
         <Route path='/dashboard/myServices'>

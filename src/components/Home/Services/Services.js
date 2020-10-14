@@ -1,46 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Services.css";
 import webMobile from "../../../images/icons/service1.png";
 import graphicsDesign from "../../../images/icons/service2.png";
 import webDev from "../../../images/icons/service3.png";
+import { Link } from "react-router-dom";
 
 const Services = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => {
+        setServices(data);
+      });
+  }, []);
   return (
     <section className='container services-section mb-5'>
       <h3 className='text-center mb-5 service-awesome'>
         Provide Awesome <span>Services</span>
       </h3>
       <div className='row'>
-        <div className='col-md-4'>
-          <div className='text-center service-card'>
-            <img src={webMobile} className='' alt='...' />
-            <h5 className='service-title'>Web & Mobile design</h5>
-            <p className='service-text'>
-              We craft stunning and amazing web UI, using a well drrafted UX to
-              fit your product.
-            </p>
-          </div>
-        </div>
-        <div className='col-md-4'>
-          <div className='text-center service-card'>
-            <img src={graphicsDesign} className='' alt='...' />
-            <h5 className='service-title'>Graphic design</h5>
-            <p className='service-text'>
-              Amazing flyers, social media posts and brand representations that
-              would make your brand stand out.
-            </p>
-          </div>
-        </div>
-        <div className='col-md-4'>
-          <div className='text-center service-card'>
-            <img src={webDev} className='' alt='...' />
-            <h5 className='service-title'>Web development</h5>
-            <p className='service-text'>
-              With well written codes, we build amazing apps for all platforms,
-              mobile and web apps in general.
-            </p>
-          </div>
-        </div>
+        {services.map((service) => {
+          return (
+            <div className='col-md-4 mb-3'>
+              <div className='text-center service-card'>
+                <img
+                  src={`data:image/png;base64,${service.image.img}`}
+                  className=''
+                  alt='...'
+                />
+                <Link to={`/dashboard/order/${service._id}`}>
+                  <h5 className='service-title'>{service.title}</h5>
+                </Link>
+                <p className='service-text'>{service.description}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
