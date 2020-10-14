@@ -9,10 +9,28 @@
   margin-right: 20px !important;
   font-family: "Poppins", sans-serif;
   color: #111430 !important;
+  transition: transform 0.2s;
+}
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #7ab259 !important;
+  font-weight: 700;
 }
 .login-btn {
   background-color: #111430;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
+}
+.login-btn:hover {
+  background-color: #7ab259;
+}
+.logout-btn {
+  background-color: #7ab259;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.logout-btn:hover {
+  background-color: rgb(214, 5, 33);
 }

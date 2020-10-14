@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import mainLogo from "../../../images/logos/logo.png";
+import { UserContext } from "../../../App";
 
 const Navbar = () => {
+  const [loggedInUser, setloggedInUser] = useContext(UserContext);
   return (
     <nav class='container navbar navbar-expand-lg navbar-light pt-2'>
       <Link class='navbar-brand' to='/'>
@@ -42,11 +44,24 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          <li class='nav-item'>
-            <Link class='nav-link' to='/'>
-              <span className='login-btn'>Login</span>
-            </Link>
-          </li>
+          {loggedInUser.email ? (
+            <li class='nav-item'>
+              <Link class='nav-link' to='/'>
+                <span
+                  onClick={() => setloggedInUser({})}
+                  className='logout-btn'
+                >
+                  LogOut
+                </span>
+              </Link>
+            </li>
+          ) : (
+            <li class='nav-item'>
+              <Link class='nav-link' to='/login'>
+                <span className='login-btn'>Login</span>
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

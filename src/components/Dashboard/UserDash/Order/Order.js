@@ -1,22 +1,47 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Order.css";
 
 const Order = () => {
   const { id } = useParams();
-  const [userOrder, setUserOrder] = useState([]);
+  const history = useHistory();
+  const [userOrder, setUserOrder] = useState();
   useEffect(() => {
     fetch(`http://localhost:5000/serviceOrder/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setUserOrder(data);
-        console.log(data);
+        setUserOrder(data[0].title);
       });
   }, []);
 
+  const [orderData, setOrderData] = useState({});
+
+  const handleBlur = (e) => {
+    const newData = { ...orderData };
+    newData.project = userOrder.toString();
+    newData[e.target.name] = e.target.value;
+    setOrderData(newData);
+    console.log(newData);
+  };
+
+  const handleOrderSubmit = (e) => {
+    fetch("http://localhost:5000/postOrder", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        history.push("/");
+      });
+    e.preventDefault();
+  };
   return (
     <div className='row'>
       <Sidebar></Sidebar>
@@ -25,45 +50,59 @@ const Order = () => {
           <h4 className='pt-4 pl-5'>Order</h4>
         </div>
         <div className='order-form col-md-6 p-5'>
-          <form action=''>
+          <form action='' onSubmit={handleOrderSubmit}>
+            <div className='form-group'>
+              <input
+                onBlur={handleBlur}
+                type='text'
+                name='name'
+                className='form-control'
+                placeholder='Your name'
+                required
+              />
+            </div>
+            <div className='form-group'>
+              <input
+                onBlur={handleBlur}
+                type='email'
+                name='email'
+                className='form-control'
+                placeholder='Your Email address'
+                required
+              />
+            </div>
+
             <div className='form-group'>
               <input
                 type='text'
+                name='project'
                 className='form-control'
-                placeholder='Your name'
+                value={userOrder}
               />
             </div>
-            <div className='form-group'>
-              <input
-                type='email'
-                className='form-control'
-                placeholder='Your Email address'
-              />
-            </div>
-            {userOrder.map((order) => {
-              return (
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    className='form-control'
-                    value={order.title}
-                  />
-                </div>
-              );
-            })}
+
             <div className='form-group'>
               <textarea
-                name=''
+                onBlur={handleBlur}
+                name='details'
                 className='form-control'
                 id=''
                 cols='10'
                 rows='4'
                 placeholder='Project Details'
+                required
               ></textarea>
             </div>
 
             <div className='form-group d-flex'>
-              <input type='text' className='form-control' placeholder='Price' />
+              <input
+                onBlur={handleBlur}
+                type='text'
+                name='price'
+                className='form-control'
+                placeholder='Price'
+                required
+              />
               <div className='upload-btn-wrapper ml-2'>
                 <button class='upload-btn'>
                   Upload a file{" "}
@@ -73,9 +112,9 @@ const Order = () => {
               </div>
             </div>
             <div className='form-group'>
-              <button type='button' className='footer-btn'>
+              <button type='submit' className='footer-btn'>
                 {" "}
-                Send{" "}
+                Place Order{" "}
               </button>
             </div>
           </form>
