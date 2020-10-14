@@ -1,0 +1,44 @@
+.sidebar {
+  background: white;
+  position: fixed;
+  display: block;
+  box-shadow: 6px 0 5px -4px #888;
+}
+.sidebar-logo img {
+  height: 45px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+.sidebar li {
+  margin-bottom: 1.5em;
+  margin-left: 1.5em;
+}
+.dash-menu {
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.2s;
+  color: #111430;
+}
+
+.dash-menu:hover {
+  display: inline-block;
+  color: #009444;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+.dash-logout {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  margin-left: 2em;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.dash-logout:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: #c71221;
+  font-weight: 800;
+  transform: scale(1.1);
+}
+.sidebar svg {
+  margin-right: 5px;
+}
