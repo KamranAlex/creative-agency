@@ -1,12 +1,33 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
-  const handleBlur = (e) => {};
-  const handleMakeAdmin = () => {};
+  const history = useHistory();
+  const [adminInfo, setAdminInfo] = useState({});
+  const handleBlur = (e) => {
+    const newInfo = { ...adminInfo };
+    newInfo[e.target.name] = e.target.value;
+    setAdminInfo(newInfo);
+  };
+  const handleMakeAdmin = (e) => {
+    fetch("http://localhost:5000/makeAdmin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(adminInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        history.push("/dashboard/serviceList");
+      });
+    e.preventDefault();
+  };
 
   return (
     <div className='row'>

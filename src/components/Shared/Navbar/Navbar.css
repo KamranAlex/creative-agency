@@ -23,14 +23,16 @@
   border-radius: 5px;
 }
 .login-btn:hover {
-  background-color: #7ab259;
+  background-color: #3ea104 !important;
+  color: white !important;
 }
 .logout-btn {
-  background-color: #7ab259;
+  background-color: #ca0551;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
 }
 .logout-btn:hover {
-  background-color: rgb(214, 5, 33);
+  background-color: #111430 !important;
+  color: white !important;
 }

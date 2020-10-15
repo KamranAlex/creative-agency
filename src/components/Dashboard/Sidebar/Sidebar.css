@@ -29,7 +29,7 @@
 }
 .dash-logout {
   font-family: "Poppins", sans-serif;
-  color: #111430;
+  color: #c71221 !important;
   margin-left: 2em;
   font-weight: 600;
   transition: transform 0.2s;
@@ -37,7 +37,7 @@
 .dash-logout:hover {
   display: inline-block;
   text-decoration: none;
-  color: #c71221;
+  color: #da0331;
   font-weight: 800;
   transform: scale(1.1);
 }

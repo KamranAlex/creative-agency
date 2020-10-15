@@ -16,12 +16,11 @@
   display: flex;
   justify-content: center;
 }
-.feedback-card {
+.all-feedback-card {
   border: 1px solid lightgray;
   padding: 10px;
-  height: 170px;
+  height: 200px;
   margin: 10px 30px;
-  overflow: hidden;
 }
 .client-info img {
   height: 60px;

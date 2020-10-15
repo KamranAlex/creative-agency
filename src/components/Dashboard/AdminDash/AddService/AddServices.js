@@ -1,10 +1,12 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./AddServices.css";
 
 const AddServices = () => {
+  const history = useHistory();
   const [info, setInfo] = useState({});
   const [file, setFile] = useState(null);
   const handleBlur = (e) => {
@@ -20,11 +22,9 @@ const AddServices = () => {
 
   const handleSubmit = (e) => {
     const formData = new FormData();
-    console.log(info);
     formData.append("file", file);
     formData.append("title", info.title);
     formData.append("description", info.description);
-    console.log(formData);
     fetch("http://localhost:5000/addService", {
       method: "POST",
       body: formData,
@@ -32,10 +32,12 @@ const AddServices = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        history.push("/dashboard/serviceList");
       })
       .catch((error) => {
         console.error(error);
       });
+    e.preventDefault();
   };
   return (
     <div className='row'>

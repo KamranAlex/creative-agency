@@ -1,11 +1,45 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 
 const Review = () => {
-  const handleBlur = (e) => {};
-  const handleReviewSubmit = () => {};
+  const history = useHistory();
+  const [reviewInfo, setReviewInfo] = useState({});
+  const [file, setFile] = useState(null);
+  const handleBlur = (e) => {
+    const newInfo = { ...reviewInfo };
+    newInfo[e.target.name] = e.target.value;
+    setReviewInfo(newInfo);
+    console.log(newInfo);
+  };
+
+  const handleFileChange = (e) => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
+
+  const handleReviewSubmit = (e) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", reviewInfo.name);
+    formData.append("designation", reviewInfo.designation);
+    formData.append("comment", reviewInfo.comment);
+    fetch("http://localhost:5000/addReview", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        history.push("/dashboard/myServices");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    e.preventDefault();
+  };
   return (
     <div className='row'>
       <Sidebar></Sidebar>
@@ -42,7 +76,7 @@ const Review = () => {
               <label htmlFor='Comment'>Comment</label>
               <textarea
                 onBlur={handleBlur}
-                name='details'
+                name='comment'
                 className='form-control'
                 id=''
                 cols='10'
@@ -59,7 +93,12 @@ const Review = () => {
                   Upload Your Image{" "}
                   <FontAwesomeIcon icon={faCloudUploadAlt}></FontAwesomeIcon>
                 </button>
-                <input type='file' name='file' />
+                <input
+                  onChange={handleFileChange}
+                  type='file'
+                  name='file'
+                  required
+                />
               </div>
             </div>
             <div className='form-group'>

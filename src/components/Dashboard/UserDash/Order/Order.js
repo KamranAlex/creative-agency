@@ -28,7 +28,6 @@ const Order = () => {
     newData.project = userOrder.toString();
     newData[e.target.name] = e.target.value;
     setOrderData(newData);
-    console.log(newData);
   };
 
   const handleOrderSubmit = (e) => {
@@ -57,18 +56,22 @@ const Order = () => {
           <form action='' onSubmit={handleOrderSubmit}>
             <div className='form-group'>
               <input
+                onBlur={handleBlur}
                 type='text'
                 name='name'
                 className='form-control'
                 value={loggedInUser.name}
+                required
               />
             </div>
             <div className='form-group'>
               <input
+                onBlur={handleBlur}
                 type='email'
                 name='email'
                 className='form-control'
                 value={loggedInUser.email}
+                required
               />
             </div>
 

@@ -11,6 +11,7 @@ import Review from "./components/Dashboard/UserDash/Review/Review";
 import MakeAdmin from "./components/Dashboard/AdminDash/MakeAdmin/MakeAdmin";
 import ServiceList from "./components/Dashboard/AdminDash/ServiceList/ServiceList";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import AllReviews from "./components/Home/AllReviews/AllReviews";
 
 export const UserContext = createContext();
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/allReviews'>
+            <AllReviews></AllReviews>
           </Route>
           <PrivateRoute path='/dashboard/order/:id'>
             <Order></Order>
