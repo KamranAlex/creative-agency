@@ -16,3 +16,11 @@
   color: #111430;
   font-weight: 800;
 }
+.card-intro strong {
+  height: 37px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgb(189, 189, 189);
+  background: rgb(231, 230, 230);
+  padding: 5px 12px !important;
+  margin-top: 3px;
+}

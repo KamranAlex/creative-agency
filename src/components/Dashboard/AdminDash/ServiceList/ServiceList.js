@@ -45,10 +45,10 @@ const ServiceList = () => {
                     >
                       Pending
                     </option>
-                    <option value='onGoing' style={{ color: "#FFBD3E" }}>
+                    <option value='ongoing' style={{ color: "#FFBD3E" }}>
                       Ongoing
                     </option>
-                    <option value='done' style={{ color: "#009444" }}>
+                    <option value='complete' style={{ color: "#009444" }}>
                       Complete
                     </option>
                   </select>

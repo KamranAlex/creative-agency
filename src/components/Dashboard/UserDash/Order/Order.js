@@ -20,28 +20,42 @@ const Order = () => {
   }, []);
 
   const [orderData, setOrderData] = useState({});
-
+  const [file, setFile] = useState(null);
+  const handleFileChange = (e) => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
   const handleBlur = (e) => {
     const newData = { ...orderData };
     newData.name = loggedInUser.name;
     newData.email = loggedInUser.email;
+    newData.status = "pending";
     newData.project = userOrder.toString();
     newData[e.target.name] = e.target.value;
     setOrderData(newData);
   };
 
   const handleOrderSubmit = (e) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", orderData.name);
+    formData.append("email", orderData.email);
+    formData.append("project", orderData.project);
+    formData.append("details", orderData.details);
+    formData.append("price", orderData.price);
+    formData.append("status", orderData.status);
+
     fetch("http://localhost:5000/postOrder", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(orderData),
+      body: formData,
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
         history.push("/dashboard/myServices");
+      })
+      .catch((error) => {
+        console.error(error);
       });
     e.preventDefault();
   };
@@ -52,7 +66,7 @@ const Order = () => {
         <div className='desh-head'>
           <h4 className='pt-4 pl-5'>Order</h4>
         </div>
-        <div className='order-form col-md-6 p-5'>
+        <div className='order-form mx-5 col-md-6 p-5'>
           <form action='' onSubmit={handleOrderSubmit}>
             <div className='form-group'>
               <input
@@ -111,7 +125,12 @@ const Order = () => {
                   Upload a file{" "}
                   <FontAwesomeIcon icon={faCloudUploadAlt}></FontAwesomeIcon>
                 </button>
-                <input type='file' name='file' />
+                <input
+                  onChange={handleFileChange}
+                  type='file'
+                  name='file'
+                  required
+                />
               </div>
             </div>
             <div className='form-group'>
