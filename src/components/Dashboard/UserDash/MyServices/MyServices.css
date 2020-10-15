@@ -1,0 +1,10 @@
+.main-col {
+  position: absolute;
+  display: block;
+}
+.myService-card {
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 10px rgb(143, 135, 135);
+  border-radius: 5px;
+}

@@ -7,6 +7,9 @@ import Order from "./components/Dashboard/UserDash/Order/Order";
 import MyServices from "./components/Dashboard/UserDash/MyServices/MyServices";
 import AddServices from "./components/Dashboard/AdminDash/AddService/AddServices";
 import { createContext } from "react";
+import Review from "./components/Dashboard/UserDash/Review/Review";
+import MakeAdmin from "./components/Dashboard/AdminDash/MakeAdmin/MakeAdmin";
+import ServiceList from "./components/Dashboard/AdminDash/ServiceList/ServiceList";
 
 export const UserContext = createContext();
 
@@ -25,12 +28,20 @@ function App() {
           <Route path='/dashboard/order/:id'>
             <Order></Order>
           </Route>
-
           <Route path='/dashboard/myServices'>
             <MyServices></MyServices>
           </Route>
+          <Route path='/dashboard/review'>
+            <Review></Review>
+          </Route>
           <Route path='/dashboard/addService'>
             <AddServices></AddServices>
+          </Route>
+          <Route path='/dashboard/makeAdmin'>
+            <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path='/dashboard/serviceList'>
+            <ServiceList></ServiceList>
           </Route>
         </Switch>
       </Router>

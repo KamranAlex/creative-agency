@@ -1,0 +1,8 @@
+.main-col {
+  padding: 0 !important;
+  background: lightgray;
+  position: relative;
+}
+.order-form {
+  margin: auto 20px;
+}

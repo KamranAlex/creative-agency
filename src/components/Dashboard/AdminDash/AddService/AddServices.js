@@ -2,6 +2,7 @@ import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
+import "./AddServices.css";
 
 const AddServices = () => {
   const [info, setInfo] = useState({});
@@ -43,10 +44,10 @@ const AddServices = () => {
         <div className='desh-head'>
           <h4 className='pt-4 pl-5'>Add Service</h4>
         </div>
-        <div className='order-form col-md-6 p-5'>
+        <div className='order-form col-md-7 p-5'>
           <form action='' onSubmit={handleSubmit}>
             <div className='form-group'>
-              <label htmlFor='Description'>Title</label>
+              <label htmlFor='Title'>Title</label>
               <input
                 onBlur={handleBlur}
                 type='text'

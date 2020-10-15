@@ -1,0 +1,35 @@
+.main-col {
+  padding: 0 !important;
+  background: lightgray;
+  position: relative;
+}
+.desh-head {
+  background: white;
+  height: 70px;
+  box-shadow: 0px 2px 1px lightgrey;
+}
+.desh-head h4 {
+  font-family: "Poppins", sans-serif;
+  color: #111430;
+  font-weight: 600;
+}
+.services-table {
+  margin: auto 20px !important;
+}
+.table {
+  background: white;
+  box-shadow: 0 0 10px lightgrey;
+  border-radius: 8px;
+}
+table th,
+td {
+  font-family: "Poppins", sans-serif;
+}
+table td select {
+  color: #111430;
+  font-family: "Poppins", sans-serif;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  padding: 2px 4px;
+}

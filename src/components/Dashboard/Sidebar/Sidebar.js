@@ -21,7 +21,9 @@ const Sidebar = () => {
     >
       <ul className='list-unstyled'>
         <div className='sidebar-logo '>
-          <img src={dashLogo} alt='' />
+          <Link to='/'>
+            <img src={dashLogo} alt='' />
+          </Link>
         </div>
         <li>
           <Link to='/dashboard/order' className='dash-menu'>
@@ -30,17 +32,17 @@ const Sidebar = () => {
         </li>
         <li>
           <Link to='/dashboard/myServices' className='dash-menu'>
-            <FontAwesomeIcon icon={faTruck} /> <span>Services</span>
+            <FontAwesomeIcon icon={faTruck} /> <span>My Services</span>
           </Link>
         </li>
 
         <li>
-          <Link to='/' className='dash-menu'>
+          <Link to='/dashboard/review' className='dash-menu'>
             <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
           </Link>
         </li>
         <li>
-          <Link to='/' className='dash-menu'>
+          <Link to='/dashboard/serviceList' className='dash-menu'>
             <FontAwesomeIcon icon={faTasks} /> <span>Service List</span>
           </Link>
         </li>
@@ -50,12 +52,12 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to='/' className='dash-menu'>
+          <Link to='/dashboard/makeAdmin' className='dash-menu'>
             <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
           </Link>
         </li>
       </ul>
-      <div>
+      <div className='mb-4'>
         <Link to='/' className='dash-logout'>
           <FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span>
         </Link>

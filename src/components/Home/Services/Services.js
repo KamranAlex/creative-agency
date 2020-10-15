@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Services.css";
-import webMobile from "../../../images/icons/service1.png";
-import graphicsDesign from "../../../images/icons/service2.png";
-import webDev from "../../../images/icons/service3.png";
 import { Link } from "react-router-dom";
 
 const Services = () => {

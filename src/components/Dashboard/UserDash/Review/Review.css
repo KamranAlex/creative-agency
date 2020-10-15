@@ -3,6 +3,7 @@
   background: lightgray;
   position: relative;
 }
+
 .desh-head {
   background: white;
   height: 70px;
@@ -13,21 +14,16 @@
   color: #111430;
   font-weight: 600;
 }
-.order-form {
+
+.review-form {
   margin: auto 20px;
 }
-
 form label {
   font-family: "Poppins", sans-serif;
   color: #111430;
   font-weight: 600;
 }
 form input[type="text"] {
-  font-family: "Poppins", sans-serif;
-  color: #111430;
-  font-weight: 500;
-}
-form input[type="email"] {
   font-family: "Poppins", sans-serif;
   color: #111430;
   font-weight: 500;
