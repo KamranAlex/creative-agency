@@ -17,9 +17,10 @@ const MyServices = () => {
             <div className='myService-card px-3 py-2'>
               <div className='card-intro d-flex justify-content-between'>
                 <img src={webMobile} alt='' style={{ height: "60px" }} />
-                <strong className='myService-status'>Status</strong>
+                <strong className='myService-status mr-2'>Status</strong>
               </div>
               <div className='card-details mt-2'>
+                <h6>Graphics Design</h6>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
                   debitis eos, nihil labore molestias quaerat.
@@ -31,9 +32,10 @@ const MyServices = () => {
             <div className='myService-card px-3 py-2'>
               <div className='card-intro d-flex justify-content-between'>
                 <img src={webMobile} alt='' style={{ height: "60px" }} />
-                <strong className='myService-status'>Status</strong>
+                <strong className='myService-status mr-2'>Status</strong>
               </div>
               <div className='card-details mt-2'>
+                <h6>Graphics Design</h6>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
                   debitis eos, nihil labore molestias quaerat.
@@ -44,10 +46,11 @@ const MyServices = () => {
           <div className='col-md-6 mt-3'>
             <div className='myService-card px-3 py-2'>
               <div className='card-intro d-flex justify-content-between'>
-                <img src={webMobile} alt='' style={{ height: "60px" }} />
-                <strong className='myService-status'>Status</strong>
+                <img src={graphicsDesign} alt='' style={{ height: "60px" }} />
+                <strong className='myService-status mr-2'>Status</strong>
               </div>
               <div className='card-details mt-2'>
+                <h6>Graphics Design</h6>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
                   debitis eos, nihil labore molestias quaerat.

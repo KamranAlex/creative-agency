@@ -10,6 +10,7 @@ import { createContext } from "react";
 import Review from "./components/Dashboard/UserDash/Review/Review";
 import MakeAdmin from "./components/Dashboard/AdminDash/MakeAdmin/MakeAdmin";
 import ServiceList from "./components/Dashboard/AdminDash/ServiceList/ServiceList";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -25,9 +26,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <Route path='/dashboard/order/:id'>
+          <PrivateRoute path='/dashboard/order/:id'>
             <Order></Order>
-          </Route>
+          </PrivateRoute>
           <Route path='/dashboard/myServices'>
             <MyServices></MyServices>
           </Route>

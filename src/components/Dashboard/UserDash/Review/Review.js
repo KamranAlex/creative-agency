@@ -13,7 +13,7 @@ const Review = () => {
         <div className='desh-head'>
           <h4 className='pt-4 pl-5'>Review</h4>
         </div>
-        <div className='review-form col-md-6 px-5 py-3'>
+        <div className='review-form col-md-6 ml-3 px-5 py-3'>
           <form action='' onSubmit={handleReviewSubmit}>
             <div className='form-group'>
               <label htmlFor='Name'>Name</label>

@@ -1,11 +1,13 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { UserContext } from "../../../../App";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Order.css";
 
 const Order = () => {
+  const [loggedInUser, setloggedInUser] = useContext(UserContext);
   const { id } = useParams();
   const history = useHistory();
   const [userOrder, setUserOrder] = useState();
@@ -21,6 +23,8 @@ const Order = () => {
 
   const handleBlur = (e) => {
     const newData = { ...orderData };
+    newData.name = loggedInUser.name;
+    newData.email = loggedInUser.email;
     newData.project = userOrder.toString();
     newData[e.target.name] = e.target.value;
     setOrderData(newData);
@@ -38,7 +42,7 @@ const Order = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        history.push("/");
+        history.push("/dashboard/myServices");
       });
     e.preventDefault();
   };
@@ -53,22 +57,18 @@ const Order = () => {
           <form action='' onSubmit={handleOrderSubmit}>
             <div className='form-group'>
               <input
-                onBlur={handleBlur}
                 type='text'
                 name='name'
                 className='form-control'
-                placeholder='Your name'
-                required
+                value={loggedInUser.name}
               />
             </div>
             <div className='form-group'>
               <input
-                onBlur={handleBlur}
                 type='email'
                 name='email'
                 className='form-control'
-                placeholder='Your Email address'
-                required
+                value={loggedInUser.email}
               />
             </div>
 

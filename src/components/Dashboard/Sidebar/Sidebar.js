@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import {
   faCartPlus,
   faCommentAlt,
@@ -12,8 +12,24 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Sidebar.css";
 import dashLogo from "../../../images/logos/logo.png";
+import jwt_decode from "jwt-decode";
+import { UserContext } from "../../../App";
 
 const Sidebar = () => {
+  const [loggedInUser, setloggedInUser] = useContext(UserContext);
+  const history = useHistory();
+  const isLoggedIn = () => {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
+      return false;
+    }
+    const decodedToken = jwt_decode(token);
+    // get current time
+    const currentTime = new Date().getTime() / 1000;
+    // compare the expiration time with the current time
+    // will return false if expired and will return true if not expired
+    return decodedToken.exp > currentTime;
+  };
   return (
     <div
       className='sidebar d-flex flex-column justify-content-between col-md-2  px-4 py-3 '
@@ -59,7 +75,16 @@ const Sidebar = () => {
       </ul>
       <div className='mb-4'>
         <Link to='/' className='dash-logout'>
-          <FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span>
+          <FontAwesomeIcon icon={faSignOutAlt} />{" "}
+          <span
+            onClick={() => {
+              setloggedInUser({});
+              sessionStorage.setItem("token", "");
+              history.push("/");
+            }}
+          >
+            Logout
+          </span>
         </Link>
       </div>
     </div>

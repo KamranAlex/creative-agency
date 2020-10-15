@@ -3,9 +3,22 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import mainLogo from "../../../images/logos/logo.png";
 import { UserContext } from "../../../App";
+import jwt_decode from "jwt-decode";
 
 const Navbar = () => {
   const [loggedInUser, setloggedInUser] = useContext(UserContext);
+  const isLoggedIn = () => {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
+      return false;
+    }
+    const decodedToken = jwt_decode(token);
+    // get current time
+    const currentTime = new Date().getTime() / 1000;
+    // compare the expiration time with the current time
+    // will return false if expired and will return true if not expired
+    return decodedToken.exp > currentTime;
+  };
   return (
     <nav class='container navbar navbar-expand-lg navbar-light pt-2'>
       <Link class='navbar-brand' to='/'>
@@ -44,11 +57,14 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          {loggedInUser.email ? (
+          {loggedInUser.email || isLoggedIn() ? (
             <li class='nav-item'>
               <Link class='nav-link' to='/'>
                 <span
-                  onClick={() => setloggedInUser({})}
+                  onClick={() => {
+                    setloggedInUser({});
+                    sessionStorage.setItem("token", "");
+                  }}
                   className='logout-btn'
                 >
                   LogOut

@@ -41,7 +41,8 @@ const MakeAdmin = () => {
             </div>
             <div className='form-group'>
               <button type='submit' className='btn btn-success'>
-                Add Admin <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+                <strong>Add Admin</strong>{" "}
+                <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
               </button>
             </div>
           </form>
