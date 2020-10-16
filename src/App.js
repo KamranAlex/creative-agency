@@ -13,6 +13,7 @@ import ServiceList from "./components/Dashboard/AdminDash/ServiceList/ServiceLis
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AllReviews from "./components/Home/AllReviews/AllReviews";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 export const UserContext = createContext();
 
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route path='/dashboard/serviceList'>
             <ServiceList></ServiceList>
+          </Route>
+          <Route path='*'>
+            <ErrorPage></ErrorPage>
           </Route>
         </Switch>
       </Router>

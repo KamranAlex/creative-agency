@@ -7,13 +7,13 @@ const Dashboard = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   console.log(loggedInUser);
   return (
-    <div>
+    <>
       {loggedInUser.isAdmin ? (
         <ServiceList></ServiceList>
       ) : (
         <MyServices></MyServices>
       )}
-    </div>
+    </>
   );
 };
 

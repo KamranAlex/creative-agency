@@ -1,0 +1,20 @@
+.error-container {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  margin: auto auto 80px auto;
+  box-shadow: 0 0 5px lightgray;
+}
+.E-code {
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+}
+.E-text {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
