@@ -12,6 +12,7 @@ import MakeAdmin from "./components/Dashboard/AdminDash/MakeAdmin/MakeAdmin";
 import ServiceList from "./components/Dashboard/AdminDash/ServiceList/ServiceList";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AllReviews from "./components/Home/AllReviews/AllReviews";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 
 export const UserContext = createContext();
 
@@ -30,6 +31,9 @@ function App() {
           <Route path='/allReviews'>
             <AllReviews></AllReviews>
           </Route>
+          <PrivateRoute exact path='/dashboard'>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
           <PrivateRoute path='/dashboard/order/:id'>
             <Order></Order>
           </PrivateRoute>

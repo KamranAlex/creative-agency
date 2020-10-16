@@ -18,6 +18,8 @@ const Login = () => {
     firebase.initializeApp(firebaseConfig);
   }
 
+  // const findAdmin = (userEmail) => {};
+
   const handleGoogleSignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -26,6 +28,18 @@ const Login = () => {
       .then(function (result) {
         const { displayName, email } = result.user;
         const signedInUser = { name: displayName, email };
+        fetch(
+          "https://arcane-meadow-55145.herokuapp.com/findAdminByEmail?email=" +
+            signedInUser.email
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
+              signedInUser.isAdmin = true;
+            } else {
+              signedInUser.isAdmin = false;
+            }
+          });
         setLoggedInUser(signedInUser);
         storeAuthToken();
       })

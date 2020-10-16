@@ -14,7 +14,7 @@ const ServiceList = () => {
   //Update Status
   const handleStatusUpdate = (id) => {
     console.log(selectedOption);
-    fetch("http://localhost:5000/updateStatus?id=" + id, {
+    fetch("https://arcane-meadow-55145.herokuapp.com/updateStatus?id=" + id, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const ServiceList = () => {
 
   const [allOrders, setAllOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getAllService")
+    fetch("https://arcane-meadow-55145.herokuapp.com/getAllService")
       .then((res) => res.json())
       .then((data) => {
         setAllOrders(data);
@@ -40,7 +40,7 @@ const ServiceList = () => {
       <Sidebar></Sidebar>
       <div className='col-md-10 main-col'>
         <div className='desh-head'>
-          <h4 className='pt-4 pl-5'>Review</h4>
+          <h4 className='pt-4 pl-5'>Services List</h4>
         </div>
         <div className='services-table px-2 py-4'>
           <table className='table table-striped'>

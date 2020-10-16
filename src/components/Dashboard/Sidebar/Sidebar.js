@@ -41,37 +41,44 @@ const Sidebar = () => {
             <img src={dashLogo} alt='' />
           </Link>
         </div>
-        <li>
-          <Link to='/dashboard/order' className='dash-menu'>
-            <FontAwesomeIcon icon={faCartPlus} /> <span>Order</span>
-          </Link>
-        </li>
-        <li>
-          <Link to='/dashboard/myServices' className='dash-menu'>
-            <FontAwesomeIcon icon={faTruck} /> <span>My Services</span>
-          </Link>
-        </li>
+        {loggedInUser.isAdmin === false ? (
+          <>
+            <li>
+              <Link to='/dashboard/order' className='dash-menu'>
+                <FontAwesomeIcon icon={faCartPlus} /> <span>Order</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/myServices' className='dash-menu'>
+                <FontAwesomeIcon icon={faTruck} /> <span>My Services</span>
+              </Link>
+            </li>
 
-        <li>
-          <Link to='/dashboard/review' className='dash-menu'>
-            <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
-          </Link>
-        </li>
-        <li>
-          <Link to='/dashboard/serviceList' className='dash-menu'>
-            <FontAwesomeIcon icon={faTasks} /> <span>Service List</span>
-          </Link>
-        </li>
-        <li>
-          <Link to='/dashboard/addService' className='dash-menu'>
-            <FontAwesomeIcon icon={faPlusSquare} /> <span>Add Service</span>
-          </Link>
-        </li>
-        <li>
-          <Link to='/dashboard/makeAdmin' className='dash-menu'>
-            <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
-          </Link>
-        </li>
+            <li>
+              <Link to='/dashboard/review' className='dash-menu'>
+                <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to='/dashboard/serviceList' className='dash-menu'>
+                <FontAwesomeIcon icon={faTasks} /> <span>Service List</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/addService' className='dash-menu'>
+                <FontAwesomeIcon icon={faPlusSquare} /> <span>Add Service</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/makeAdmin' className='dash-menu'>
+                <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
       <div className='mb-4'>
         <Link to='/' className='dash-logout'>

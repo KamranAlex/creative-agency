@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     setAdminInfo(newInfo);
   };
   const handleMakeAdmin = (e) => {
-    fetch("http://localhost:5000/makeAdmin", {
+    fetch("https://arcane-meadow-55145.herokuapp.com/makeAdmin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

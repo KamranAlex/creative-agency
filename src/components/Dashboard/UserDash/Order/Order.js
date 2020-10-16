@@ -12,7 +12,7 @@ const Order = () => {
   const history = useHistory();
   const [userOrder, setUserOrder] = useState();
   useEffect(() => {
-    fetch(`http://localhost:5000/serviceOrder/${id}`)
+    fetch(`https://arcane-meadow-55145.herokuapp.com/serviceOrder/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setUserOrder(data[0].title);
@@ -45,7 +45,7 @@ const Order = () => {
     formData.append("price", orderData.price);
     formData.append("status", orderData.status);
 
-    fetch("http://localhost:5000/postOrder", {
+    fetch("https://arcane-meadow-55145.herokuapp.com/postOrder", {
       method: "POST",
       body: formData,
     })

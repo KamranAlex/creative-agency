@@ -47,14 +47,15 @@ const Navbar = () => {
               Our Portfolio
             </Link>
           </li>
-          <li class='nav-item'>
-            <Link class='nav-link' to='/'>
-              Our Team
-            </Link>
-          </li>
+
           <li class='nav-item'>
             <Link class='nav-link' to='/'>
               Contact Us
+            </Link>
+          </li>
+          <li class='nav-item'>
+            <Link class='nav-link' to='/dashboard'>
+              Dashboard
             </Link>
           </li>
           {loggedInUser.email || isLoggedIn() ? (

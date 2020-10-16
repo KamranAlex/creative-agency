@@ -10,7 +10,10 @@ const MyServices = () => {
   const [loggedInUser, setloggedInUser] = useContext(UserContext);
   const [orderData, setOrderData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getServiceByEmail?email=" + loggedInUser.email)
+    fetch(
+      "https://arcane-meadow-55145.herokuapp.com/getServiceByEmail?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => {
         setOrderData(data);
