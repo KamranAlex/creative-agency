@@ -1,7 +1,9 @@
 .main-col {
   padding: 0 !important;
   background: lightgray;
-  position: relative;
+  position: absolute;
+  margin-left: auto !important;
+  right: 0 !important;
 }
 .desh-head {
   background: white;
@@ -28,6 +30,8 @@ td {
 table td select {
   color: #111430;
   font-family: "Poppins", sans-serif;
+  background: lightgray;
+  box-shadow: 0 0 5px gray;
   border-radius: 4px;
   font-weight: 600;
   border: none;

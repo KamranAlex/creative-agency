@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AllReviews from "./components/Home/AllReviews/AllReviews";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import GoHome from "./components/ErrorPage/GoHome";
 
 export const UserContext = createContext();
 
@@ -26,33 +27,46 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
+
           <Route path='/login'>
             <Login></Login>
           </Route>
+
           <Route path='/allReviews'>
             <AllReviews></AllReviews>
           </Route>
+
           <PrivateRoute exact path='/dashboard'>
             <Dashboard></Dashboard>
           </PrivateRoute>
           <PrivateRoute path='/dashboard/order/:id'>
             <Order></Order>
           </PrivateRoute>
+
           <Route path='/dashboard/myServices'>
             <MyServices></MyServices>
           </Route>
+
           <Route path='/dashboard/review'>
             <Review></Review>
           </Route>
+
           <Route path='/dashboard/addService'>
             <AddServices></AddServices>
           </Route>
+
           <Route path='/dashboard/makeAdmin'>
             <MakeAdmin></MakeAdmin>
           </Route>
+
           <Route path='/dashboard/serviceList'>
             <ServiceList></ServiceList>
           </Route>
+
+          <Route path='/goHome'>
+            <GoHome></GoHome>
+          </Route>
+
           <Route path='*'>
             <ErrorPage></ErrorPage>
           </Route>

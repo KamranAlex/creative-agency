@@ -71,6 +71,9 @@ const Navbar = () => {
                   LogOut
                 </span>
               </Link>
+              <small className='text-center text-success'>
+                {loggedInUser.name}
+              </small>
             </li>
           ) : (
             <li class='nav-item'>

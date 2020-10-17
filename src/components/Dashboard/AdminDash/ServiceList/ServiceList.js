@@ -12,8 +12,7 @@ const ServiceList = () => {
     setSelectedOption({ status: e.target.value });
   };
   //Update Status
-  const handleStatusUpdate = (id) => {
-    console.log(selectedOption);
+  const handleStatusUpdate = (e, id) => {
     fetch("https://arcane-meadow-55145.herokuapp.com/updateStatus?id=" + id, {
       method: "PATCH",
       headers: {
@@ -25,6 +24,7 @@ const ServiceList = () => {
       .then((data) => {
         console.log(data);
       });
+    e.preventDefault();
   };
 
   const [allOrders, setAllOrders] = useState([]);
@@ -35,10 +35,11 @@ const ServiceList = () => {
         setAllOrders(data);
       });
   }, []);
+
   return (
     <div className='row'>
       <Sidebar></Sidebar>
-      <div className='col-md-10 main-col'>
+      <div className='col-md-10 col-sm-10  main-col'>
         <div className='desh-head'>
           <h4 className='pt-4 pl-5'>Services List</h4>
         </div>
@@ -55,6 +56,17 @@ const ServiceList = () => {
             </thead>
             <tbody>
               {allOrders.map((order) => {
+                const getStyle = () => {
+                  let statusColor = "";
+                  if (order.status === "pending") {
+                    statusColor = "#FF4545";
+                  } else if (order.status === "ongoing") {
+                    statusColor = "#FFBD3E";
+                  } else if (order.status === "complete") {
+                    statusColor = "#009444";
+                  }
+                  return statusColor;
+                };
                 return (
                   <tr>
                     <th scope='row'>{order.name}</th>
@@ -72,8 +84,8 @@ const ServiceList = () => {
                         <select
                           id='status'
                           onChange={handleStatusChange}
-                          style={{ color: "#FF4545" }}
                           value={order.status}
+                          style={{ color: getStyle() }}
                         >
                           <option value='pending' style={{ color: "#FF4545" }}>
                             Pending
@@ -88,7 +100,7 @@ const ServiceList = () => {
 
                         <button
                           type='submit'
-                          className='btn-success'
+                          className='btn-success ml-1'
                           style={{
                             height: "50%",
                             borderRadius: "6px",

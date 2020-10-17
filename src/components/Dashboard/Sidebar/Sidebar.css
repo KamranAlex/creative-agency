@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap");
 .sidebar {
   background: white;
   position: fixed;
   width: 100%;
   display: block;
+  left: 0;
+  margin-right: auto !important;
   box-shadow: 6px 0 5px -4px #888;
 }
 .sidebar-logo img {
@@ -10,6 +13,7 @@
   margin-bottom: 50px;
   margin-left: 10px;
 }
+
 .sidebar li {
   margin-bottom: 1.5em;
   margin-left: 1.5em;
@@ -27,11 +31,17 @@
   font-weight: bold;
   transform: scale(1.1);
 }
+
+.user-name {
+  font-family: "Sansita Swashed", cursive;
+  font-weight: 900;
+  color: #018b41;
+}
 .dash-logout {
   font-family: "Poppins", sans-serif;
   color: #c71221 !important;
   margin-left: 2em;
-  font-weight: 600;
+  font-weight: 700;
   transition: transform 0.2s;
 }
 .dash-logout:hover {

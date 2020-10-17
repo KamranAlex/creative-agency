@@ -1,6 +1,7 @@
 .main-col {
   position: absolute;
-  display: block;
+  margin-left: auto !important;
+  right: 0 !important;
 }
 .myService-card {
   height: 160px;

@@ -1,7 +1,9 @@
 .main-col {
   padding: 0 !important;
   background: lightgray;
-  position: relative;
+  position: absolute;
+  margin-left: auto !important;
+  right: 0 !important;
 }
 .desh-head {
   background: white;

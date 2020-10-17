@@ -34,13 +34,14 @@ const Login = () => {
         )
           .then((res) => res.json())
           .then((data) => {
-            if (data) {
+            if (data.length > 0) {
               signedInUser.isAdmin = true;
             } else {
               signedInUser.isAdmin = false;
             }
           });
         setLoggedInUser(signedInUser);
+        sessionStorage.setItem("isAdmin", loggedInUser.isAdmin);
         storeAuthToken();
       })
       .catch(function (error) {
