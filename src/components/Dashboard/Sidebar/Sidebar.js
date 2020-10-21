@@ -34,8 +34,8 @@ const Sidebar = () => {
   const isAdmin = sessionStorage.getItem("isAdmin");
   return (
     <div
-      className='sidebar d-flex flex-column justify-content-between col-md-2  px-4 py-3 '
-      style={{ height: "100vh" }}
+      className='sidebar d-flex flex-column justify-content-between col-md-2 col-sm-6 px-4 py-3 '
+      style={{ height: "100%" }}
     >
       <ul className='list-unstyled'>
         <div className='sidebar-logo '>
@@ -43,7 +43,7 @@ const Sidebar = () => {
             <img src={dashLogo} alt='' />
           </Link>
         </div>
-        {loggedInUser.isAdmin === true && (
+        {loggedInUser.isAdmin === true ? (
           <>
             {" "}
             <li>
@@ -62,23 +62,26 @@ const Sidebar = () => {
               </Link>
             </li>
           </>
-        )}
-        <li>
-          <Link to='/goHome' className='dash-menu'>
-            <FontAwesomeIcon icon={faCartPlus} /> <span>Order</span>
-          </Link>
-        </li>
-        <li>
-          <Link to='/dashboard/myServices' className='dash-menu'>
-            <FontAwesomeIcon icon={faTruck} /> <span>My Services</span>
-          </Link>
-        </li>
+        ) : (
+          <>
+            <li>
+              <Link to='/goHome' className='dash-menu'>
+                <FontAwesomeIcon icon={faCartPlus} /> <span>Order</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/myServices' className='dash-menu'>
+                <FontAwesomeIcon icon={faTruck} /> <span>My Services</span>
+              </Link>
+            </li>
 
-        <li>
-          <Link to='/dashboard/review' className='dash-menu'>
-            <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
-          </Link>
-        </li>
+            <li>
+              <Link to='/dashboard/review' className='dash-menu'>
+                <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
       <div className='mb-5'>
         <h6 className='user-name mb-4 text-center'>{loggedInUser.name}</h6>
