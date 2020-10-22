@@ -2,17 +2,20 @@ import React from "react";
 
 const OrderdServices = ({ order }) => {
   let orderStatus = "";
+  let bgColor = "";
   let statusColor = "";
+
   if (order.status === "pending") {
     orderStatus = "Pending";
+    bgColor = "#FFE3E3";
     statusColor = "#FF4545";
-  }
-  if (order.status === "ongoing") {
+  } else if (order.status === "ongoing") {
     orderStatus = "OnGoing";
-    statusColor = "#FFBD3E";
-  }
-  if (order.status === "complete") {
+    bgColor = "#ffec7047";
+    statusColor = "#ffae00";
+  } else if (order.status === "complete") {
     orderStatus = "Complete";
+    bgColor = "#C6FFE0";
     statusColor = "#009444";
   }
 
@@ -27,7 +30,7 @@ const OrderdServices = ({ order }) => {
           />
           <strong
             className='myService-status mr-2'
-            style={{ color: statusColor }}
+            style={{ background: bgColor, color: statusColor }}
           >
             {orderStatus}
           </strong>
