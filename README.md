@@ -4,13 +4,13 @@
 
 ## Main Tools
 
-    - React.js
-    - Express.js
-    - MongoDB
-    - Firebase
-    - HTML
-    - CSS
-    - Bootstrap
+- React.js
+- Express.js
+- MongoDB
+- Firebase
+- HTML
+- CSS
+- Bootstrap
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
