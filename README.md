@@ -2,7 +2,15 @@
 
 ## _[Go Live](https://creative-agency-d3172.firebaseapp.com/)_
 
-##Tools
+## Main Tools
+
+    - React.js
+    - Express.js
+    - MongoDB
+    - Firebase
+    - HTML
+    - CSS
+    - Bootstrap
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
