@@ -2,7 +2,14 @@
 
 ## _[Go Live](https://creative-agency-d3172.firebaseapp.com/)_
 
-## Tools :
+## Main Features :
+   - **User can order for a Creative Service from the Available Service.**
+   - **User can view order status from user Deshboard.**
+   - **User Need to Login to place an order.**
+   - **Admin can Update order status and can also Create New Service.**
+   - **Fully Responsive**
+
+## Tools Used:
    - React.js
    - Express.js
    - MongoDB
@@ -11,12 +18,9 @@
    - CSS
    - Bootstrap
 
-## Main Features :
-   - **User can order for a Creative Service from the Available Service.**
-   - **User can view order status from user Deshboard.**
-   - **User Need to Login to place an order.**
-   - **Admin can Update order status and can also Create New Service.**
-   - **Fully Responsive**
+## _[Package Used](./package.json)_
+
+
 
 ## Available Scripts
 
