@@ -2,17 +2,21 @@
 
 ## _[Go Live](https://creative-agency-d3172.firebaseapp.com/)_
 
-## Main Tools
+## Tools :
+   - React.js
+   - Express.js
+   - MongoDB
+   - Firebase
+   - HTML
+   - CSS
+   - Bootstrap
 
-- React.js
-- Express.js
-- MongoDB
-- Firebase
-- HTML
-- CSS
-- Bootstrap
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Main Features :
+   - **User can order for a Creative Service from the Available Service.**
+   - **User can view order status from user Deshboard.**
+   - **User Need to Login to place an order.**
+   - **Admin can Update order status and can also Create New Service.**
+   - **Fully Responsive**
 
 ## Available Scripts
 
