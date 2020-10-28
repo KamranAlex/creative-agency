@@ -18,7 +18,16 @@
    - CSS
    - Bootstrap
 
-#### _[Packages Used](./package.json)_
+## _[Packages Used](./package.json)_
+   - react-dom
+   - react-router-dom
+   - react-responsive-carousel 3.2.10
+   - slick-carousel 1.8.1
+   - react-select 3.1.0
+   - jwt-decode 3.0.0
+   - firebase 7.22.0
+   - bootstrap 4.5.2
+   - react-fontawesome 0.1.11
 
 
 
